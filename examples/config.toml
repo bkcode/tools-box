@@ -1,0 +1,30 @@
+# 用户私有配置：~/.config/dev-flow/config.toml
+# 真实 Key 仅填写到用户配置，此模板不含真实凭据。
+# 支持多个项目配置；执行目录按目录前缀匹配，嵌套时选择最具体的目录。
+[[projects]]
+name = "project"
+directory = "/path/to/project"
+mcp_url = "http://publisher.example.invalid:9011/mcp"
+mcp_key = "<MCP Key>"
+
+# 如需连接另一台服务器，重复四项即可：
+# [[projects]]
+# name = "another-project"
+# directory = "/path/to/another-project"
+# mcp_url = "http://another-publisher.example.invalid:9011/mcp"
+# mcp_key = "<another MCP Key>"
+
+# 以下为可选高级配置，不属于向导必填项：
+# service_map = { "project-backend" = "registered-backend" }
+#
+# Nacos Naming v1 兼容 API。放在对应 [[projects]] 之后。
+# [projects.nacos]
+# url = "https://nacos.example.invalid/nacos"
+# username_env = "PROJECT_NACOS_USERNAME"
+# password_env = "PROJECT_NACOS_PASSWORD"
+#
+# [projects.services.project-service-core]
+# nacos_service = "project-service-core"
+# namespace = "replace-with-namespace-id"
+# group = "DEFAULT_GROUP"
+# instances = [{ target = "actual-deployment-target", ip = "192.0.2.10", port = 10200 }]

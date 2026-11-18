@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tools-box"
+version = "0.1.0"
+description = "A terminal toolbox: Git delivery and configurable MCP publishing"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+deploy = ["mcp==1.26.0"]
+
+[project.scripts]
+tools-box = "tools_box.cli:main"
+dev-flow = "tools_box.git_flow.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["tools_box*"]

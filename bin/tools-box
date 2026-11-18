@@ -1,0 +1,7 @@
+#!/bin/sh
+ROOT=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd) || exit 1
+export PYTHONPATH="$ROOT${PYTHONPATH:+:$PYTHONPATH}"
+if [ -x "$ROOT/.venv/bin/python" ]; then
+    exec "$ROOT/.venv/bin/python" -m tools_box "$@"
+fi
+exec python3 -m tools_box "$@"
